@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 
-#container, #risultato{
+.container, #risultato{
     text-align: center;
     padding-top: 20px;
 }
@@ -18,4 +18,8 @@ h2{
     font-size: 50px;
     padding: 10px;
     border: 1px solid black;
+}
+
+.hide{
+    display: none;
 }
