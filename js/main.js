@@ -23,7 +23,7 @@ while(arrayRandomNum.length < 5){ // inserire nell'array i numeri finché non si
 console.log(arrayRandomNum);
 
 // STAMPARE IN PAGINA I NUMERI GENERATI:
-const container = document.getElementById("container");
+const container = document.querySelector(".container");
 
 for(i = 0; i < arrayRandomNum.length; i++){
     // crea un elemento
@@ -32,23 +32,24 @@ for(i = 0; i < arrayRandomNum.length; i++){
     container.append(item);
 }
 
-// prendo l'elemento:
-// const stringNumber = document.querySelector(".random_number");
-// stringNumber.append(arrayRandomNum);
 
-// console.log(stringNumber);
-  
-    
+// dopo che il browser ha eseguito questo compito legge una funzione con timer 30 sec:
 
-// dopo che il browser ha eseguito questo compito legge una funzione con timer 30 sec
-// questa funzione dovrà fare:
 
-setTimeout(chiediEConfronta, 5000);
+setTimeout(nascondiNumeri, 29500);
+
+
+setTimeout(chiediEConfronta, 30000);
 
 
 /* FUNZIONE */
+// questa funzione nasconderà la stringa dei numeri prima del prompt
+function nascondiNumeri(){
+    container.classList.add("hide");
+}
+
+// questa seconda andrà a chiedere i numeri e farà la comparazione
 function chiediEConfronta(){
-    // nascondere i numeri presenti in pagina
 
     const arrayUserNum = []; // array vuoto per i numeri dell'utente
     let correctNum = 0;
