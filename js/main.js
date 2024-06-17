@@ -36,18 +36,28 @@ for(i = 0; i < arrayRandomNum.length; i++){
 // stringNumber.append(arrayRandomNum);
 
 // console.log(stringNumber);
-
-
+  
     
-    
-    
-
+const arrayUserNum = []; // array vuoto per i numeri dell'utente
 // dopo che il browser ha eseguito questo compito legge una funzione con timer 30 sec
 // questa funzione dovrà fare:
+
+setTimeout(chiediEConfronta, 5000);
+
+
+/* FUNZIONE */
+function chiediEConfronta(){
     // nascondere i numeri presenti in pagina
-    // chiedere 5 volte alla persona di inserimente dei numeri
-    // questi numeri verranno messi in un array ->
-        // array vuoto
-        // chiedo il numero
-        // lo inserisco
+    
+    for(j = 0; j < 5; j++){ // chiedere 5 volte alla persona di inserimente dei numeri
+        let userNumb = parseInt(prompt("Inserisci il numero:")); // chiedo il numero
+        arrayUserNum.push(userNumb); // lo inserisco
+    }
+}
+
+console.log(arrayUserNum);
+    
+        
+        
+        
     // confronto array della persona con l'array dei numeri random 
