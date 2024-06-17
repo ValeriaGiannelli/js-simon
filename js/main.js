@@ -19,6 +19,7 @@ while(arrayRandomNum.length < 5){ // inserire nell'array i numeri finché non si
         arrayRandomNum.push(randomNum);
     }
 }
+
 console.log(arrayRandomNum);
 
 // STAMPARE IN PAGINA I NUMERI GENERATI:
@@ -38,7 +39,7 @@ for(i = 0; i < arrayRandomNum.length; i++){
 // console.log(stringNumber);
   
     
-const arrayUserNum = []; // array vuoto per i numeri dell'utente
+
 // dopo che il browser ha eseguito questo compito legge una funzione con timer 30 sec
 // questa funzione dovrà fare:
 
@@ -48,16 +49,35 @@ setTimeout(chiediEConfronta, 5000);
 /* FUNZIONE */
 function chiediEConfronta(){
     // nascondere i numeri presenti in pagina
-    
+
+    const arrayUserNum = []; // array vuoto per i numeri dell'utente
+    let correctNum = 0;
+
     for(j = 0; j < 5; j++){ // chiedere 5 volte alla persona di inserimente dei numeri
         let userNumb = parseInt(prompt("Inserisci il numero:")); // chiedo il numero
         arrayUserNum.push(userNumb); // lo inserisco
     }
+
+    for(k = 0; k < 5; k++){
+
+        if(arrayRandomNum[k] === arrayUserNum[k]){
+            correctNum++;
+            console.log("corretto");
+            console.log(parseInt(arrayRandomNum[k]));
+            console.log(parseInt(arrayUserNum[k]));
+
+        } else {
+            console.log("Il numero corretto era:", parseInt(arrayRandomNum[k]));
+        }
+    }
+
+    console.log(correctNum);
+    
 }
 
-console.log(arrayUserNum);
+
     
         
         
         
-    // confronto array della persona con l'array dei numeri random 
+    
