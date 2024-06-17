@@ -5,13 +5,13 @@
     box-sizing: border-box;
 }
 
-#container{
+#container, #risultato{
     text-align: center;
     padding-top: 20px;
 }
 
 h2{
-    padding-bottom: 20px;
+    padding: 20px 0;
 }
 
 .number{

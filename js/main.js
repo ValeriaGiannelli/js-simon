@@ -58,8 +58,12 @@ function chiediEConfronta(){
         arrayUserNum.push(userNumb); // lo inserisco
     }
 
-    // comparazione dei due array:
+    
+    // stampo in pagina il risultato:
+    // prendo l'elemento della pagina
+    const result = document.querySelector(".result");
 
+    // comparazione dei due array:
     // array per i numeri azzeccati
     const rightNumber = [];
 
@@ -78,8 +82,10 @@ function chiediEConfronta(){
         }
     }
 
+    // stampo in pagina
+    result.innerHTML = `Hai azzeccato, ${correctNum} numeri. I numeri che hai indovinato sono: ${rightNumber}`; 
     // stampa in console il punteggio e i numeri che ha scritto correttamente
-    console.log("Hai azzeccato", correctNum, "numeri. I numeri che hai indovinato sono:", rightNumber);    
+    // console.log("Hai azzeccato", correctNum, "numeri. I numeri che hai indovinato sono:", rightNumber);    
 }
 
 
