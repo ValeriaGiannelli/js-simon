@@ -58,11 +58,18 @@ function chiediEConfronta(){
         arrayUserNum.push(userNumb); // lo inserisco
     }
 
-    for(k = 0; k < 5; k++){
+    // comparazione dei due array:
 
+    // array per i numeri azzeccati
+    const rightNumber = [];
+
+    for(k = 0; k < 5; k++){
+        // se il numero nell'array random è uguale a quello della persona
         if(arrayRandomNum[k] === arrayUserNum[k]){
-            correctNum++;
+            correctNum++; //aumento il punteggio
             console.log("corretto");
+            rightNumber.push(arrayUserNum[k]); //metto il numero indovinato nell'array
+
             console.log(parseInt(arrayRandomNum[k]));
             console.log(parseInt(arrayUserNum[k]));
 
@@ -71,8 +78,8 @@ function chiediEConfronta(){
         }
     }
 
-    console.log(correctNum);
-    
+    // stampa in console il punteggio e i numeri che ha scritto correttamente
+    console.log("Hai azzeccato", correctNum, "numeri. I numeri che hai indovinato sono:", rightNumber);    
 }
 
 
