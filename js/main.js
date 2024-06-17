@@ -19,9 +19,25 @@ while(arrayRandomNum.length < 5){ // inserire nell'array i numeri finché non si
         arrayRandomNum.push(randomNum);
     }
 }
-
-
 console.log(arrayRandomNum);
+
+// STAMPARE IN PAGINA I NUMERI GENERATI:
+const container = document.getElementById("container");
+
+for(i = 0; i < arrayRandomNum.length; i++){
+    // crea un elemento
+    let item = createElemntWithClass("span", "number");
+    item.append(arrayRandomNum[i]);
+    container.append(item);
+}
+
+// prendo l'elemento:
+// const stringNumber = document.querySelector(".random_number");
+// stringNumber.append(arrayRandomNum);
+
+// console.log(stringNumber);
+
+
     
     
     
