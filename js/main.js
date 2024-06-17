@@ -5,11 +5,26 @@
 
 
 
-//creare un array con i numeri random:
-    // creare un arrai vuoto
-    // prendere la funzione che genera i numeri randomù
-    // inserire nell'array i numeri finché non si arriva a una lunghezza di 5
+//CREARE UN ARRAY CON NUMERI RANDOM:
+
+// creare un arrai vuoto
+const arrayRandomNum = [];
+
+while(arrayRandomNum.length < 5){ // inserire nell'array i numeri finché non si arriva a una lunghezza di 5
+    // prendere la funzione che genera i numeri random
+    let randomNum = generateRandomNum(1, 100);
+
     // se il numero già presente genera un altro
+    if(!arrayRandomNum.includes(randomNum)){
+        arrayRandomNum.push(randomNum);
+    }
+}
+
+
+console.log(arrayRandomNum);
+    
+    
+    
 
 // dopo che il browser ha eseguito questo compito legge una funzione con timer 30 sec
 // questa funzione dovrà fare:
