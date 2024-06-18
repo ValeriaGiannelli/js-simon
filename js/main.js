@@ -71,8 +71,6 @@ function chiediEConfronta(){
 
             console.log(parseInt(arrayRandomNum[j]));
         }
-
-        arrayUserNum.push(userNumb); // lo inserisco
     }
 
     console.log(rightNumber);
@@ -84,8 +82,7 @@ function chiediEConfronta(){
     // const arrayUserNum = []; // array vuoto per i numeri dell'utente
     // for(k = 0; k < 5; k++){
     //     // se il numero nell'array random è uguale a quello della persona
-    //     // if(arrayRandomNum[k] === arrayUserNum[k])
-    //     if(arrayRandomNum.includes(arrayUserNum[k])){
+    //     // if(arrayRandomNum[k] === arrayUserNum[k]){
     //         correctNum++; //aumento il punteggio
     //         console.log("corretto");
     //         rightNumber.push(arrayUserNum[k]); //metto il numero indovinato nell'array
