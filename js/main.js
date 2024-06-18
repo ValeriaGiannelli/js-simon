@@ -36,10 +36,10 @@ for(i = 0; i < arrayRandomNum.length; i++){
 // dopo che il browser ha eseguito questo compito legge una funzione con timer 30 sec:
 
 
-setTimeout(nascondiNumeri, 29500);
+setTimeout(nascondiNumeri, 5000);
 
 
-setTimeout(chiediEConfronta, 30000);
+setTimeout(chiediEConfronta, 5000);
 
 
 /* FUNZIONE */
@@ -51,15 +51,8 @@ function nascondiNumeri(){
 // questa seconda andrà a chiedere i numeri e farà la comparazione
 function chiediEConfronta(){
 
-    const arrayUserNum = []; // array vuoto per i numeri dell'utente
     let correctNum = 0;
 
-    for(j = 0; j < 5; j++){ // chiedere 5 volte alla persona di inserimente dei numeri
-        let userNumb = parseInt(prompt("Inserisci il numero:")); // chiedo il numero
-        arrayUserNum.push(userNumb); // lo inserisco
-    }
-
-    
     // stampo in pagina il risultato:
     // prendo l'elemento della pagina
     const result = document.querySelector(".result");
@@ -68,23 +61,44 @@ function chiediEConfronta(){
     // array per i numeri azzeccati
     const rightNumber = [];
 
-    for(k = 0; k < 5; k++){
-        // se il numero nell'array random è uguale a quello della persona
-        if(arrayRandomNum[k] === arrayUserNum[k]){
+    for(j = 0; j < 5; j++){ // chiedere 5 volte alla persona di inserimente dei numeri
+        let userNumb = parseInt(prompt("Inserisci il numero:")); // chiedo il numero
+
+        if(arrayRandomNum.includes(userNumb)){
             correctNum++; //aumento il punteggio
             console.log("corretto");
-            rightNumber.push(arrayUserNum[k]); //metto il numero indovinato nell'array
+            rightNumber.push(userNumb); //metto il numero indovinato nell'array
 
-            console.log(parseInt(arrayRandomNum[k]));
-            console.log(parseInt(arrayUserNum[k]));
-
-        } else {
-            console.log("Il numero corretto era:", parseInt(arrayRandomNum[k]));
+            console.log(parseInt(arrayRandomNum[j]));
         }
+
+        arrayUserNum.push(userNumb); // lo inserisco
     }
 
+    console.log(rightNumber);
+    
     // stampo in pagina
     result.innerHTML = `Hai azzeccato, ${correctNum} numeri. I numeri che hai indovinato sono: ${rightNumber}`; 
+
+    
+    // const arrayUserNum = []; // array vuoto per i numeri dell'utente
+    // for(k = 0; k < 5; k++){
+    //     // se il numero nell'array random è uguale a quello della persona
+    //     // if(arrayRandomNum[k] === arrayUserNum[k])
+    //     if(arrayRandomNum.includes(arrayUserNum[k])){
+    //         correctNum++; //aumento il punteggio
+    //         console.log("corretto");
+    //         rightNumber.push(arrayUserNum[k]); //metto il numero indovinato nell'array
+
+    //         console.log(parseInt(arrayRandomNum[k]));
+    //         console.log(parseInt(arrayUserNum[k]));
+
+    //     } else {
+    //         console.log("Il numero corretto era:", parseInt(arrayRandomNum[k]));
+    //     }
+    // }
+
+    
     // stampa in console il punteggio e i numeri che ha scritto correttamente
     // console.log("Hai azzeccato", correctNum, "numeri. I numeri che hai indovinato sono:", rightNumber);    
 }
